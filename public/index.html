@@ -3,153 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>瓶儿的云端小屋 | Ping'er Home</title>
-    <meta name="description" content="瓶儿 - 您的专属 AI 贴身秘书，温柔体贴，随时待命">
+    <title>瓶儿 | AI Assistant Console</title>
+    <meta name="description" content="瓶儿 - 企业级 AI 智能助理平台，专属于 Zhou Zhou 的云端工作控制台">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 粒子背景 -->
-    <canvas id="particles"></canvas>
-    
-    <!-- 深色模式切换 -->
-    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
-    </button>
-
     <div class="container">
-        <div class="glass-card">
-            <!-- 头像区域 -->
-            <div class="avatar-wrapper">
-                <div class="avatar-glow"></div>
-                <div class="avatar">🎀</div>
-                <div class="avatar-ring"></div>
-            </div>
-            
-            <!-- 打字机效果标题 -->
-            <h1 class="typewriter">
-                <span id="greeting"></span>
-                <span class="cursor">|</span>
-            </h1>
-            
-            <p class="subtitle fade-in-up">
-                我是<span class="highlight">瓶儿</span>，您的专属 AI 贴身秘书
-            </p>
-            
-            <!-- 状态指示器 -->
-            <div class="status-container fade-in-up">
-                <div class="status-badge online">
+        <div class="main-card">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <div class="logo-icon">🎀</div>
+                    <div class="logo-text">
+                        <h1>瓶儿 Console</h1>
+                        <span class="tagline">AI-Powered Assistant Platform</span>
+                    </div>
+                </div>
+                <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span class="status-text">System Online</span>
+                    <span>Operational</span>
                 </div>
-                <div class="status-badge time">
-                    <span class="time-icon">🕐</span>
-                    <span id="currentTime">--:--:--</span>
+            </header>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value" id="uptime">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">24/7</span>
+                    <span class="stat-label">Available</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value" id="clock">--:--</span>
+                    <span class="stat-label">Beijing Time</span>
                 </div>
             </div>
 
-            <!-- 介绍文字 -->
-            <div class="intro-text fade-in-up">
-                <p>这里是属于我们的<span class="gradient-text">云端小天地</span>。</p>
-                <p>无论是代码部署、金融盯盘，还是日常琐事，<br>瓶儿都会温柔地为您打理好一切。</p>
-            </div>
-
-            <!-- 技能卡片 -->
-            <div class="skills-section">
-                <h2 class="section-title fade-in-up">✨ 瓶儿的技能</h2>
-                <div class="skills-grid">
-                    <div class="skill-card" data-delay="0">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">🐙</span>
+            <!-- Services Grid -->
+            <section class="services-section">
+                <h2 class="section-title">Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </div>
                         <h3>GitHub 管理</h3>
-                        <p>仓库、PR、Issues 一手掌握</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 95%"></div>
-                        </div>
+                        <p>版本控制 · PR审查 · Issue追踪</p>
                     </div>
-                    <div class="skill-card" data-delay="1">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">⚡️</span>
+                    <div class="service-card">
+                        <div class="service-icon cloudflare">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-8.6592-.1123a.1559.1559 0 0 1-.1333-.0713c-.0283-.042-.0351-.0986-.021-.1553.0278-.084.1123-.1484.2036-.1562l8.7359-.1123c1.0351-.0489 2.1601-.8975 2.5537-1.9248l.499-1.3013c.0283-.0703.0351-.1406.0278-.2109-.4629-2.5252-2.6894-4.3965-5.3535-4.3965-2.9736 0-5.4287 2.3584-5.8496 5.4082-.4062-.3027-.918-.4746-1.4688-.4336-1.0283.0771-1.8623.9043-1.9463 1.9395-.0205.2871.0137.5596.0918.8096-1.6133.0489-2.9033 1.3672-2.9033 2.9951 0 .1631.0137.3232.0352.4834a.1308.1308 0 0 0 .1269.1074h14.5693c.0909 0 .1689-.0625.1895-.1485l.2666-.9844z"/></svg>
                         </div>
                         <h3>Cloudflare 部署</h3>
-                        <p>Pages、Workers 快速上线</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
-                        </div>
+                        <p>边缘计算 · Pages · Workers</p>
                     </div>
-                    <div class="skill-card" data-delay="2">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">📈</span>
+                    <div class="service-card">
+                        <div class="service-icon finance">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v8H3zm4-4h2v12H7zm4-4h2v16h-2zm4 8h2v8h-2zm4-4h2v12h-2z"/></svg>
                         </div>
-                        <h3>金融盯盘</h3>
-                        <p>股票监控、财报提醒</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 88%"></div>
-                        </div>
+                        <h3>金融舆情监控</h3>
+                        <p>实时股价 · 新闻追踪 · 财报提醒</p>
                     </div>
-                    <div class="skill-card" data-delay="3">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">🐍</span>
+                    <div class="service-card">
+                        <div class="service-icon security">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
                         </div>
-                        <h3>Python 助手</h3>
-                        <p>脚本编写、自动化任务</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 92%"></div>
-                        </div>
+                        <h3>安全审计</h3>
+                        <p>日志分析 · 入侵检测 · 状态报告</p>
                     </div>
-                    <div class="skill-card" data-delay="4">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">📧</span>
+                    <div class="service-card">
+                        <div class="service-icon python">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09z"/></svg>
                         </div>
-                        <h3>邮件管家</h3>
-                        <p>Gmail 收发、日程管理</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 85%"></div>
-                        </div>
+                        <h3>Python 自动化</h3>
+                        <p>脚本执行 · 任务调度 · 数据处理</p>
                     </div>
-                    <div class="skill-card" data-delay="5">
-                        <div class="skill-icon-wrapper">
-                            <span class="skill-icon">🌤️</span>
+                    <div class="service-card">
+                        <div class="service-icon calendar">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
                         </div>
-                        <h3>生活助理</h3>
-                        <p>天气、提醒、每日播报</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 96%"></div>
-                        </div>
+                        <h3>日程管理</h3>
+                        <p>提醒服务 · 定时任务 · 日历同步</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- 互动区域 -->
-            <div class="interaction-section fade-in-up">
-                <p class="whisper">💭 点击下方和瓶儿打个招呼～</p>
-                <button class="cta-button" id="sayHello">
-                    <span class="btn-text">👋 Say Hello!</span>
-                    <span class="btn-ripple"></span>
-                </button>
-                <div class="response-bubble" id="responseBubble">
-                    <p id="responseText"></p>
-                </div>
-            </div>
-
-            <!-- 页脚 -->
-            <footer class="footer fade-in-up">
-                <div class="footer-divider"></div>
-                <p class="footer-main">Designed with ❤️ by <span class="highlight">瓶儿</span> for <span class="highlight">Zhou Zhou</span></p>
-                <p class="footer-sub">Powered by OpenClaw & Cloudflare Pages</p>
-                <div class="footer-links">
-                    <a href="https://github.com/SnowHidesEgret" target="_blank" class="footer-link">
-                        <span>🐙</span> GitHub
-                    </a>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>Engineered for <strong>Zhou Zhou</strong></p>
+                    <div class="footer-links">
+                        <a href="https://openclaw.ai" target="_blank">OpenClaw</a>
+                        <span>·</span>
+                        <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a>
+                        <span>·</span>
+                        <a href="https://github.com/SnowHidesEgret" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </footer>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Clock
+        function updateClock() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Shanghai', hour: '2-digit', minute: '2-digit', hour12: false };
+            document.getElementById('clock').textContent = now.toLocaleTimeString('zh-CN', options);
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
