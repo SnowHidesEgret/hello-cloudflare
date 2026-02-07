@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日程管理 | 瓶儿 Console</title>
+    <meta name="description" content="瓶儿的定时任务管理 - AI 助手自动执行的监控与提醒服务">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-card">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <a href="/" class="back-btn">← 返回</a>
+                </div>
+                <div class="page-title">
+                    <h1>🎀 日程管理</h1>
+                    <span class="tagline">Scheduled Tasks</span>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span>Active</span>
+                </div>
+            </header>
+
+            <!-- Tasks Section -->
+            <section class="tasks-section">
+                <div class="task-group">
+                    <div class="group-header">
+                        <span class="group-icon">📊</span>
+                        <h2>每日例行任务</h2>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <span class="task-time">08:00</span>
+                            <div class="task-info">
+                                <span class="task-name">早间问候 + 北京天气</span>
+                                <span class="task-desc">每日叫醒服务，汇报当日天气</span>
+                            </div>
+                            <span class="task-status active">每日</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">09:00</span>
+                            <div class="task-info">
+                                <span class="task-name">系统安全日志分析</span>
+                                <span class="task-desc">检查SSH登录、异常访问等安全事件</span>
+                            </div>
+                            <span class="task-status active">每日</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-group">
+                    <div class="group-header">
+                        <span class="group-icon">📈</span>
+                        <h2>舆情扫描任务</h2>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <span class="task-time">09:05<br>15:05</span>
+                            <div class="task-info">
+                                <span class="task-name">🇭🇰 港股扫描</span>
+                                <span class="task-desc">腾讯 · 小米 · 京东</span>
+                            </div>
+                            <span class="task-status active">每日2次</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">15:00</span>
+                            <div class="task-info">
+                                <span class="task-name">🇨🇭 瑞士股扫描</span>
+                                <span class="task-desc">罗氏制药 · 雀巢</span>
+                            </div>
+                            <span class="task-status active">每日</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">22:00</span>
+                            <div class="task-info">
+                                <span class="task-name">🇺🇸 美股扫描</span>
+                                <span class="task-desc">NVDA · AAPL · KO · CRCL · SLV</span>
+                            </div>
+                            <span class="task-status active">每日</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-group">
+                    <div class="group-header">
+                        <span class="group-icon">📅</span>
+                        <h2>财报与事件提醒</h2>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <span class="task-time">02-08</span>
+                            <div class="task-info">
+                                <span class="task-name">💰 AAPL 除息日</span>
+                                <span class="task-desc">苹果股息 $0.26/股</span>
+                            </div>
+                            <span class="task-status once">一次性</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">02-10</span>
+                            <div class="task-info">
+                                <span class="task-name">📊 KO 可口可乐财报</span>
+                                <span class="task-desc">盘前公布业绩</span>
+                            </div>
+                            <span class="task-status once">一次性</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">02-19</span>
+                            <div class="task-info">
+                                <span class="task-name">📊 NESN 雀巢财报</span>
+                                <span class="task-desc">2025全年业绩发布</span>
+                            </div>
+                            <span class="task-status once">一次性</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">02-24</span>
+                            <div class="task-info">
+                                <span class="task-name">📋 AAPL 股东大会</span>
+                                <span class="task-desc">年度股东大会（虚拟）</span>
+                            </div>
+                            <span class="task-status once">一次性</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-time">02-25</span>
+                            <div class="task-info">
+                                <span class="task-name">📊 NVDA / CRCL 财报</span>
+                                <span class="task-desc">英伟达Q4 + Circle财报</span>
+                            </div>
+                            <span class="task-status once">一次性</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>🎀 瓶儿为主人自动执行以上任务</p>
+                    <a href="/" class="back-link">← 返回主页</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

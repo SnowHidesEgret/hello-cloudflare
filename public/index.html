@@ -85,48 +85,15 @@
                         <h3>Python 自动化</h3>
                         <p>脚本执行 · 任务调度 · 数据处理</p>
                     </div>
-                    <div class="service-card clickable" id="schedule-card" onclick="toggleSchedule()">
-                        <div class="service-icon calendar">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                    <a href="schedule.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="service-icon calendar">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                            </div>
+                            <h3>日程管理</h3>
+                            <p>提醒服务 · 定时任务 · 日历同步</p>
                         </div>
-                        <h3>日程管理 <span class="expand-icon">▼</span></h3>
-                        <p>提醒服务 · 定时任务 · 日历同步</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Schedule Panel (Hidden by default) -->
-            <section class="schedule-panel" id="schedule-panel">
-                <div class="schedule-header">
-                    <h2>🎀 瓶儿的定时任务</h2>
-                    <button class="close-btn" onclick="toggleSchedule()">✕</button>
-                </div>
-                <div class="schedule-content">
-                    <div class="task-group">
-                        <h4>📊 每日例行</h4>
-                        <ul class="task-list">
-                            <li><span class="time">08:00</span> 早间问候 + 北京天气</li>
-                            <li><span class="time">09:00</span> 系统安全日志分析</li>
-                        </ul>
-                    </div>
-                    <div class="task-group">
-                        <h4>📈 舆情扫描</h4>
-                        <ul class="task-list">
-                            <li><span class="time">09:05, 15:05</span> 🇭🇰 港股 (腾讯/小米/京东)</li>
-                            <li><span class="time">15:00</span> 🇨🇭 瑞士 (罗氏/雀巢)</li>
-                            <li><span class="time">22:00</span> 🇺🇸 美股 (NVDA/AAPL/KO/CRCL/SLV)</li>
-                        </ul>
-                    </div>
-                    <div class="task-group">
-                        <h4>📅 财报提醒</h4>
-                        <ul class="task-list">
-                            <li><span class="time">02-08</span> 💰 AAPL 除息日</li>
-                            <li><span class="time">02-10</span> 📊 KO 可口可乐财报</li>
-                            <li><span class="time">02-19</span> 📊 NESN 雀巢财报</li>
-                            <li><span class="time">02-25</span> 📊 NVDA / CRCL 财报</li>
-                            <li><span class="time">02-24</span> 📋 AAPL 股东大会</li>
-                        </ul>
-                    </div>
+                    </a>
                 </div>
             </section>
 
@@ -157,15 +124,6 @@
         }
         updateClock();
         setInterval(updateClock, 1000);
-
-        // Schedule Panel Toggle
-        function toggleSchedule() {
-            const panel = document.getElementById('schedule-panel');
-            const card = document.getElementById('schedule-card');
-            const icon = card.querySelector('.expand-icon');
-            panel.classList.toggle('open');
-            icon.textContent = panel.classList.contains('open') ? '▲' : '▼';
-        }
     </script>
 </body>
 </html>

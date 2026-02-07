@@ -1,0 +1,146 @@
+/* Schedule Page Styles */
+
+.tasks-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.task-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.group-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: rgba(59, 130, 246, 0.05);
+    border-bottom: 1px solid var(--border);
+}
+
+.group-header .group-icon {
+    font-size: 1.2rem;
+}
+
+.group-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.task-list {
+    padding: 8px 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item:hover {
+    background: rgba(59, 130, 246, 0.03);
+}
+
+.task-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 50px;
+    white-space: nowrap;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-name {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.task-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.task-status {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.task-status.active {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent);
+}
+
+.task-status.once {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.back-btn {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: var(--primary);
+}
+
+.page-title {
+    text-align: center;
+    flex: 1;
+}
+
+.page-title h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .task-time {
+        align-self: flex-start;
+    }
+    
+    .task-status {
+        align-self: flex-end;
+    }
+}
